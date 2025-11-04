@@ -1,0 +1,22 @@
+--- build-aux/config.guess
++++ build-aux/config.guess
+@@ -965,6 +965,9 @@
+     ia64:Linux:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-linux-${LIBC}
+ 	exit ;;
++    loongarch*:Linux:*:*)
++	echo ${UNAME_MACHINE}-unknown-linux-${LIBC}
++	exit ;;
+     m32r*:Linux:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-linux-${LIBC}
+ 	exit ;;
+--- build-aux/config.sub
++++ build-aux/config.sub
+@@ -269,6 +269,7 @@
+ 	| k1om \
+ 	| le32 | le64 \
+ 	| lm32 \
++	| loongarch32 | loongarch64 | loongarchx32 \
+ 	| m32c | m32r | m32rle | m68000 | m68k | m88k \
+ 	| maxq | mb | microblaze | microblazeel | mcore | mep | metag \
+ 	| mips | mipsbe | mipseb | mipsel | mipsle \

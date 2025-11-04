@@ -1,0 +1,39 @@
+diff --git a/include/simdjson/portability.h b/include/simdjson/portability.h
+index 4034e15..55bf315 100644
+--- a/include/simdjson/portability.h
++++ b/include/simdjson/portability.h
+@@ -38,6 +38,8 @@
+ #define SIMDJSON_IS_ARM64 1
+ #elif defined(__riscv) && __riscv_xlen == 64
+ #define SIMDJSON_IS_RISCV64 1
++#elif defined(__loongarch64)
++#define SIMDJSON_IS_LOONGARCH64 1
+ #elif defined(__PPC64__) || defined(_M_PPC64)
+ #if defined(__ALTIVEC__)
+ #define SIMDJSON_IS_PPC64_VMX 1
+diff --git a/singleheader/simdjson.cpp b/singleheader/simdjson.cpp
+index 5511f3d..537dbc3 100644
+--- a/singleheader/simdjson.cpp
++++ b/singleheader/simdjson.cpp
+@@ -111,6 +111,8 @@
+ #define SIMDJSON_IS_ARM64 1
+ #elif defined(__riscv) && __riscv_xlen == 64
+ #define SIMDJSON_IS_RISCV64 1
++#elif defined(__loongarch64)
++#define SIMDJSON_IS_LOONGARCH64 1
+ #elif defined(__PPC64__) || defined(_M_PPC64)
+ #if defined(__ALTIVEC__)
+ #define SIMDJSON_IS_PPC64_VMX 1
+diff --git a/singleheader/simdjson.h b/singleheader/simdjson.h
+index 96a5fae..1ae86b7 100644
+--- a/singleheader/simdjson.h
++++ b/singleheader/simdjson.h
+@@ -131,6 +131,8 @@
+ #define SIMDJSON_IS_ARM64 1
+ #elif defined(__riscv) && __riscv_xlen == 64
+ #define SIMDJSON_IS_RISCV64 1
++#elif defined(__loongarch64)
++#define SIMDJSON_IS_LOONGARCH64 1
+ #elif defined(__PPC64__) || defined(_M_PPC64)
+ #if defined(__ALTIVEC__)
+ #define SIMDJSON_IS_PPC64_VMX 1

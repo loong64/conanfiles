@@ -1,0 +1,22 @@
+--- a/config.guess
++++ b/config.guess
+@@ -990,6 +990,9 @@
+     k1om:Linux:*:*)
+ 	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
+ 	exit ;;
++    loongarch*:Linux:*:*)
++	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
++	exit ;;
+     m32r*:Linux:*:*)
+ 	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
+ 	exit ;;
+--- a/config.sub
++++ b/config.sub
+@@ -1184,6 +1184,7 @@
+ 			| k1om \
+ 			| le32 | le64 \
+ 			| lm32 \
++			| loongarch32 | loongarch64 | loongarchx32 \
+ 			| m32c | m32r | m32rle \
+ 			| m5200 | m68000 | m680[012346]0 | m68360 | m683?2 | m68k | v70 | w65 \
+ 			| m6811 | m68hc11 | m6812 | m68hc12 | m68hcs12x | nvptx | picochip \

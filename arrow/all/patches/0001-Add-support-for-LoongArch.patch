@@ -1,0 +1,26 @@
+From 313fb4009c371dc42a925b3ee59bf9db53a1921a Mon Sep 17 00:00:00 2001
+From: liujiacheng777 <61036695+liujiacheng777@users.noreply.github.com>
+Date: Thu, 25 May 2023 05:17:51 +0800
+Subject: [PATCH] GH-34752: [C++] Add support for LoongArch (#34740)
+
+* Closes: #34752
+
+Authored-by: liujiacheng777 <1042188676@qq.com>
+Signed-off-by: Sutou Kouhei <kou@clear-code.com>
+---
+ cpp/cmake_modules/SetupCxxFlags.cmake | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/cpp/cmake_modules/SetupCxxFlags.cmake b/cpp/cmake_modules/SetupCxxFlags.cmake
+index f12bcae9d37..827e0fa4e69 100644
+--- a/cpp/cmake_modules/SetupCxxFlags.cmake
++++ b/cpp/cmake_modules/SetupCxxFlags.cmake
+@@ -36,6 +36,8 @@ if(NOT DEFINED ARROW_CPU_FLAG)
+     set(ARROW_CPU_FLAG "s390x")
+   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "riscv64")
+     set(ARROW_CPU_FLAG "riscv64")
++  elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "loongarch64")
++    set(ARROW_CPU_FLAG "loongarch64")
+   else()
+     message(FATAL_ERROR "Unknown system processor")
+   endif()
