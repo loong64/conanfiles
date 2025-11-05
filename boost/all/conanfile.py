@@ -1177,7 +1177,7 @@ class BoostConan(ConanFile):
 
     @property
     def _b2_address_model(self):
-        if self.settings.arch in ("x86_64", "ppc64", "ppc64le", "mips64", "armv8", "armv8.3", "sparcv9", "s390x", "riscv64", "wasm64"):
+        if self.settings.arch in ("x86_64", "loongarch64", "ppc64", "ppc64le", "mips64", "armv8", "armv8.3", "sparcv9", "s390x", "riscv64", "wasm64"):
             return "64"
 
         return "32"
@@ -1215,6 +1215,8 @@ class BoostConan(ConanFile):
             return "s390x"
         if str(self.settings.arch).startswith("riscv"):
             return "riscv"
+        if str(self.settings.arch).startswith("loongarch"):
+            return "loongarch"
 
         return None
 
